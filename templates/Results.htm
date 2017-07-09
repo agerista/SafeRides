@@ -5,7 +5,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js">
+var driver_name=request.form.get("name");
+var driver_name=$("#name").val();
+var driver_gender=request.form.get("gender");
+var no_of_reviews = "5";
+var driver_comments = request.form.get("comment");
+var driver_rating = request.form.get("rating");
+var driver_feel_safe = request.form.get("feel_safe");
+var driver_greenStar = request.form.get("green_star");
+var driver_punctuality = request.form.get("punctuality");
+var driver_drop_off = request.form.get("drop_off");
+var driver_special_instructions = request.form.get("special_instructions");
+var driver_driving_reckless = request.form.get("driving_reckless");
+var driver_harrassment = request.form.get("harassment");
+</script>
 
 </head>
 <body>
