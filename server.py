@@ -19,7 +19,16 @@ app.jinja_env.undefined = StrictUndefined
 def index():
     """homepage"""
 
-    return render_template("index.html")
+    return render_template("FirstPage_Search.htm")
+
+
+@app.route('/search_results')
+def search_results():
+    """Results of driver search"""
+
+    return render_template("search_results.htm")
+
+
 
 ################################################################################
 if __name__ == "__main__":
