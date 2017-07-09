@@ -15,11 +15,10 @@ class User(db.Model):
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     email = db.Column(db.String(75))
-    password = db.Column(db.String(100))
     first_name = db.Column(db.String(40))
     last_name = db.Column(db.String(40))
 
-    rating = db.relationship("Rating")
+    rating = db.relationship("Ratings")
 
     def __repr__(self):
         """Provide helpful representation when printed"""
@@ -27,13 +26,14 @@ class User(db.Model):
         return "<User user_id=%s email=%s password=%s first_name=%s\
                 last_name=%s>" % (self.user_id,
                                   self.email,
-                                  self.password,
                                   self.first_name,
                                   self.last_name)
 
 
 class Driver(db.Model):
     """Driver of safe ride app."""
+
+    __tablename__ = "drivers"
 
     driver_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     zipcode = db.Column(db.Integer)
@@ -43,7 +43,7 @@ class Driver(db.Model):
     company = db.Column(db.String(75))
     green_star = db.Column(db.Boolean)
 
-    rating = db.relationship("Rating")
+    rating = db.relationship("Ratings")
 
     def __repr__(self):
         """Provide helpful representation when printed"""
@@ -61,9 +61,11 @@ class Driver(db.Model):
 class Ratings(db.Model):
     """Ratings for drivers"""
 
+    __tablename__ = "ratings"
+
     ratings_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
-    driver_id = db.Column(db.Integer, db.ForeignKey("driver.driver_id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    driver_id = db.Column(db.Integer, db.ForeignKey("drivers.driver_id"))
     rating = db.Column(db.Integer)
     punctuality = db.Column(db.Integer)
     drop_off = db.Column(db.Boolean)
@@ -79,7 +81,7 @@ class Ratings(db.Model):
     def __repr__(self):
         """Provide helpful representation when printed"""
 
-        return "<Rating rating_id=%s user_id=%s driver_id=%s rating=%s\
+        return "<Ratings rating_id=%s user_id=%s driver_id=%s rating=%s\
         punctuality=%s drop_off=%s special_instructions=%s feel_safe=%s\
         driving_reckless=%s harassment=%s comments=%s>" % (self.rating_id,
                                                            self.user_id,
@@ -98,12 +100,12 @@ class Ratings(db.Model):
 # Helper functions
 
 
-def connect_to_db(app, db_uri="postgresql:///hikes"):
+def connect_to_db(app, db_uri="postgresql:///rides"):
     """Connect the database to our Flask app."""
 
     # Configure to use PostgreSQL database
     app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    app.config['SQLALCHEMY_ECHO'] = False
+    app.config['SQLALCHEMY_ECHO'] = True
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
