@@ -17,7 +17,11 @@ The app would provide search capabilities on a driver with several key pieces of
 
 Enhancements:
 
+A page showing all reviews for each driver so that riders may read other users' reviews.
+
 One useful enhancement to this app will be adding an emergency button to the app to be used while on the ride.
  
 Another would be maintaining ride history for every user by proving a login feature so that riders maintain a list of trusted drivers.
+
+We may also want to contact riders that have had bad experiences to see what actions they may want to take. 
 0 New
