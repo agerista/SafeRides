@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Welcome to SafeRides!</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<br>
+<h1 class="header center orange-text">SafeRides</h1>
+<script>
+var driver={name:"Happy Jack",gender:"M",noOfReviews="2",greenStar="Yes",puncRating="2",isDropOFfSafe="Yes",
+		specialInst="Yes",harrassment="No",ratings="5", comments="Not bad"};
+}
+</script>
+
+<h2 class="header center orange-text">You are riding with {driver.name} </h2>
+<br>
+<form action="Survey.htm">
+ <table class="Striped">
+      <tbody>
+      <tr>
+            <td>Gender</td>
+            <td>{driver.gender}</td>
+          </tr>
+          <tr>
+            <td>Number of Reviews</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>GreenStar</td>
+            <td></td>
+         </tr>
+          <tr>
+            <td>Punctuality Ratings</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Drop-off Safe?</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Driver follows special instructions?</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Do riders feel safe?</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Has anyone reported harassment?</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Overall User Ratings</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Additional Comments</td>
+            <td></td>
+         </tr>
+        </tbody>
+      </table>
+ <br></br>
+<table>
+<col width="700">
+<tr>
+<td><a class="waves-effect waves-light btn" onclick="location.href = 'FirstPage_Search.htm'">Cancel Ride</a></td>
+<td></td>
+<td><button class="btn waves-effect waves-light" type="submit" name="action">Continue Your Ride
+  </button></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Welcome to SafeRides!</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<br>
+<h1 class="header center orange-text">SafeRides Survey</h1>
+
+<h4 class="header center orange-text">We need to hear from you!</h4>
+<br>
+<form action="PostSurvey.py" method="POST">
+<table>
+<tr><td>Was your drop-off Safe?</td><td>
+  <div class="switch">
+    <label>
+      No
+      <input type="checkbox">
+      <span class="lever"></span>
+      Yes
+    </label>
+  </div>
+</td></tr>
+<tr><td>Did the drive follow special instructions?</td><td> 
+<div class="switch">
+    <label>
+      No
+      <input type="checkbox">
+      <span class="lever"></span>
+      Yes
+    </label>
+  </div></td></tr>
+<tr><td>Did you feel safe during your ride?</td><td><div class="switch">
+    <label>
+      No
+      <input type="checkbox">
+      <span class="lever"></span>
+      Yes
+    </label>
+  </div></td></tr>
+<tr><td>Did you experience any kind of harassment?</td><td><div class="switch">
+    <label>
+      No
+      <input type="checkbox">
+      <span class="lever"></span>
+      Yes
+    </label>
+  </div></td></tr>
+<tr><td>Was the drive punctual?</td><td>
+  <select class="browser-default">
+    <option value="1" selected>On time</option>
+      <option value="2">Before time</option>
+      <option value="3">After time</option>
+  </select>
+  </td></tr>
+<tr><td>Provide an overall rating for your ride</td><td>
+    <select class="browser-default">
+<option value="5" selected>5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+  </select></td></tr>
+  <tr><td>Additional Comments</td><td>
+    <div class="input-field col s6">
+          <textarea id="comments" class="textarea"></textarea>
+        </div></td></tr>
+</table>
+ 
+<table>
+<col width="1000">
+<tr>
+<td><button class="btn waves-effect waves-light" type="reset">Reset
+  </button></td>
+<td></td>
+<td><button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  </button></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
