@@ -18,11 +18,11 @@
 
 <div class="center-align">
 <h5>Enter your Zip Code to get started</h5>
-<form action="http://localhost:5000/ZipCodeSearch?zipCode=" method="GET">
+<form id="search-form" action="/search_results" method="POST">
 <br>
 
   <div class="input-field col s12">
-     <input id="zipCode" type=“text” class="validate">
+     <input id="zipCode" name="zipCode" type=“text” class="validate">
  </div>
 
 

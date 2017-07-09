@@ -14,30 +14,50 @@ app.secret_key = "saferidesrule"
 # error.
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/', methods=['GET'])
+
+@app.route('/')
 def index():
     """homepage"""
 
     return render_template("FirstPage_Search.htm")
 
 
-@app.route('/', methods=['POST'])
-def index():
-    """homepage"""
-
-    driver = Driver.query.filter_by(zipcode=zipcode).all()
-    print driver
-
-    return render_template("FirstPage_Search.htm", driver=driver)
-
-
-@app.route('/search_results')
+@app.route('/search_results', methods=['POST'])
 def search_results():
     """Results of driver search"""
 
-    
+    return render_template("Results.htm")
 
-    return render_template("search_results.htm")
+
+@app.route('/survey')
+def survey():
+    """Survey"""
+
+    return render_template("Survey.htm")
+
+
+@app.route('/save', methods=['POST'])
+def save_survey_results():
+    """Save survey results from form"""
+
+    user_id = request.form.get("user_id")
+    driver_id = request.form.get("driver_id")
+    rating = request.form.get("rating")
+    punctuality = request.form.get("punctuality")
+    drop_off = request.form.get("drop_off")
+    special_instructions = request.form.get("special_instructions")
+    feel_safe = request.form.get("feel_safe")
+    driving_reckless = request.form.get("driving_reckless")
+    harassment = request.form.get("harassment")
+    comment = request.form.get("comment")
+
+    new_log = Ratings(user_id=user_id, driver_id=driver_id, rating=rating, punctuality=punctuality,
+                      drop_off=drop_off, special_instructions=special_instructions,
+                      feel_safe=feel_safe, driving_reckless=driving_reckless,
+                      harassment=harassment, comment=comment)
+
+    db.session.add(new_log)
+    db.session.commit()
 
 
 

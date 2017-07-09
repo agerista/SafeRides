@@ -8,11 +8,11 @@ function submitSearch(evt) {
     
     var formValues = {
 
-        "zipCode": $("#zipCode").val()
+        "driver": $("#driver").val()
 
     };
 
-    $.post("/search_results",
+    $.post("/",
           formInputs,
           showSearchResults);
 }
