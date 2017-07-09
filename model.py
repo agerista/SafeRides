@@ -71,7 +71,7 @@ class Ratings(db.Model):
     feel_safe = db.Column(db.Boolean)
     driving_reckless = db.Column(db.Integer)
     harassment = db.Column(db.Boolean)
-    comments = db.Column(db.String(500))
+    comments = db.Column(db.String(1000))
 
     user = db.relationship("User")
     driver = db.relationship("Driver")
