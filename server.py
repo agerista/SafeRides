@@ -14,17 +14,28 @@ app.secret_key = "saferidesrule"
 # error.
 app.jinja_env.undefined = StrictUndefined
 
-
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     """homepage"""
 
     return render_template("FirstPage_Search.htm")
 
 
+@app.route('/', methods=['POST'])
+def index():
+    """homepage"""
+
+    driver = Driver.query.filter_by(zipcode=zipcode).all()
+    print driver
+
+    return render_template("FirstPage_Search.htm", driver=driver)
+
+
 @app.route('/search_results')
 def search_results():
     """Results of driver search"""
+
+    
 
     return render_template("search_results.htm")
 
