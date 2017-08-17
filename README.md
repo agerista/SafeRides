@@ -4,7 +4,7 @@
 
 SafeRides was created as a part of [Hacking for Humanity](http://hackingforhumanity.girlsintech.org/) held July 8 at DocuSign. 
 
-<img src="https://github.com/agerista/SafeRides/blob/master/Static/home.png">
+<img src="https://github.com/agerista/SafeRides/blob/master/static/home.png">
 
 ### The Team
 
